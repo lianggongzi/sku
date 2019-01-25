@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sp_16">
+
+        <TextView
+            android:id="@+id/libsku_quwei_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="区位："
+            android:textColor="#000"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/libsku_lib_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_toRightOf="@+id/libsku_quwei_tv"
+            android:textColor="#000"
+            android:textSize="18dp" />
+<TextView
+    android:id="@+id/libsku_time_tv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:layout_marginRight="16dp"
+
+    />
+    </RelativeLayout>
+
+    <com.github.jdsjlzx.recyclerview.LRecyclerView
+        android:id="@+id/libsku_lrv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/dp_10" />
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="228dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_shape_login"
+        android:text="保存"
+        android:textColor="#fff"
+        android:textSize="@dimen/dp_18"
+        android:layout_marginBottom="@dimen/dp_10"/>
+</LinearLayout>
