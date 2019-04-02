@@ -179,6 +179,7 @@ public class Scanning_Fragment extends Fragment {
                 sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                     @Override
                     public void onClick(SweetAlertDialog sweetAlertDialog) {
+
                         datas.remove(position);
                         lRecyclerViewAdapter.notifyDataSetChanged();
                         sweetAlertDialog.dismiss();

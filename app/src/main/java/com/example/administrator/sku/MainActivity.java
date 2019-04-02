@@ -78,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     exportExcel(DateUtils.getCurrentTime1());
+                    datas.clear();
+                    lRecyclerViewAdapter.notifyDataSetChanged();
                 }
             });
         }
@@ -272,12 +274,18 @@ public class MainActivity extends AppCompatActivity {
      * @param
      */
     public void exportExcel(String excelName) {
-//        file = new File(getSDPath() + "/Record");
-//        makeDir(file);
-////        ExcelUtils.initExcel(file.toString() + "/出库明细.xls", title);
-//        ExcelUtils.initExcels(file.toString() + "/"+excelName+".xls", title,excelName);
-//        fileName = getSDPath() + "/Record/"+excelName+".xls";
-//        ExcelUtils.writeObjListToExcel(getRecordData(), fileName, this);
+        file = new File(getSDPath() + "/Record");
+        makeDir(file);
+//        String fileName = (String) SPUtils.get(getActivity(), "fileName", "");
+//        if (fileName.equals("")) {
+//            String excelFile = file.toString() + "/" + excelName + ".xls";
+//            ExcelUtils.initExcels(getRecordData(), excelFile, title, excelName, getActivity());
+////            ExcelUtils.writeObjListToExcels(getRecordData(), fileName, excelName,  getActivity());
+//        } else {
+//            ExcelUtils.writeObjListToExcels(getRecordData(), fileName, excelName, getActivity());
+//        }
+        ExcelUtils.initExcel(file.toString() + "/" + excelName + ".xls", title);
+        ExcelUtils.writeObjListToExcel(getRecordData(), file.toString() + "/" + excelName + ".xls", this);
     }
 
 
@@ -291,7 +299,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < datas.size(); i++) {
             ArrayList<String> beanList = new ArrayList<String>();
             beanList.add(datas.get(i));
-            beanList.add("1");
+            beanList.add(String.valueOf(i+1));
             recordList.add(beanList);
         }
         return recordList;

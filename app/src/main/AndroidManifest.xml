@@ -35,19 +35,17 @@
         <activity android:name=".MainActivity">
 
         </activity>
-        <activity android:name=".XiaoWen.XiaoWenActivity">
+        <activity android:name=".XiaoWen.XiaoWenActivity"></activity>
+        <activity android:name=".XiaoWen.TextActivity"></activity>
+        <activity android:name=".XiaoWen.LibActivity" />
+        <activity android:name=".XiaoWen.LibSkuActivity" />
+        <activity android:name=".SKU_N5Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".XiaoWen.TextActivity">
-
-        </activity>
-        <activity android:name=".XiaoWen.LibActivity" />
-        <activity android:name=".XiaoWen.LibSkuActivity" />
-
     </application>
 
 </manifest>
